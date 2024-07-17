@@ -1,0 +1,40 @@
+.settingarea {
+    z-index: 10;
+    width: 100vw;
+    height: 30vh;
+    position: fixed;
+    top: 70vh;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    background-color: gainsboro;
+    transition: top 0.5s;
+}
+
+.settingarea.down {
+    top: 100vh;
+}
+
+.setspace {
+    height: 30vh;
+    transition: height 0.5s;
+}
+
+.setspace.down {
+    height: 0;
+}
+
+
+.settingarea .twoform {
+    border: black 1px solid;
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+
+    padding: 10px;
+}
+
