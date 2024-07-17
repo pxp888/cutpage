@@ -24,7 +24,7 @@ function Shortcut({index, cuts, setCuts, editmode, selected, setSelected, cutsty
 	return (
 		<>
 			<div 
-				className={selected===index ? 'shortcut selected' : 'shortcut'}
+				className={editmode ? (selected===index ? 'shortcut selected':'shortcut unselected') : 'shortcut'}
 				onClick={() => { if (editmode) { setSelected(index); } }}
 				style={style}
 			>
