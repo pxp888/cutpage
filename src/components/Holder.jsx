@@ -45,16 +45,27 @@ function Holder() {
 	}, [shortcuts]);
 
 	useEffect(() => {
+		if (startup) { return; }
+		localStorage.setItem('cutstyle', JSON.stringify(cutstyle));
+	}, [cutstyle]);
+
+	useEffect(() => {
 		const data = localStorage.getItem('shortcuts');
 		if (data) {
 			setShortcuts(JSON.parse(data));
 			console.log('Data loaded');
 		}
+
+		const styledata = localStorage.getItem('cutstyle');
+		if (styledata) {
+			setCutstyle(JSON.parse(styledata));
+			console.log('Style loaded');
+		}
 	}, []);
 
 	return (
 		<div className='mainarea'>
-			<div onClick={toggleEdit}>{editmode ? 'normal' : 'edit mode'}</div>
+			{/* <div onClick={toggleEdit}>{editmode ? 'normal' : 'edit mode'}</div> */}
 
 			<div className="frame" style={framestyle}>
 				{shortcuts.map((cut, index) => (
