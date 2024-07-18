@@ -93,7 +93,8 @@ function Settings({
 
   	return (
 	<>
-	<div className={editmode ? 'settingarea' : 'settingarea down'}>
+	<div className={editmode ? 'settingarea' : 'settingarea down'}
+		onClick={(e) => e.stopPropagation()}>
 		<div className='twoform'>
 			<label htmlFor="nameline">name: </label>
 			<input type="text" id='nameline' onChange={updateShorts}/>
