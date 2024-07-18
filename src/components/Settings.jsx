@@ -63,6 +63,7 @@ function Settings({
 	}
 
 	function importCuts(e) {
+		console.log('importing');
 		if (!e.target.files || e.target.files.length === 0) {
 			console.log('no files selected');
 			return;
@@ -76,6 +77,7 @@ function Settings({
 		reader.onload = (e) => {
 			const data = JSON.parse(e.target.result);
 			setShortcuts(data);
+			console.log('imported');
 		};
 		reader.readAsText(file);
 	}
@@ -161,7 +163,7 @@ function Settings({
 
 			<button className="nbut" id="exportbutton" onClick={exportCuts} >Export</button>
 			
-			<input type="file" id="filepicker" onClick={importCuts} style={{display: 'none'}}  />
+			<input type="file" id="filepicker" onChange={importCuts} style={{display: 'none'}}  />
 			<button className="nbut" id="importbutton" onClick={() => document.getElementById('filepicker').click()} >Import</button>
 			
 			<button className="nbut" id="clearcutbutton" onClick={clearCuts} >Reset Shortcuts</button>
