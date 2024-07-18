@@ -4,8 +4,15 @@ import '../styles/Settings.css';
 
 function Settings({editmode, selected, shortcuts, setShortcuts, cutstyle, setCutstyle}) {
 	useEffect(() => {
-		if (selected === -1) { return; }
-		if (selected >= shortcuts.length) { return; }
+		let ok=true;
+		if (selected === -1) { ok = false; }
+		if (selected >= shortcuts.length) { ok=false; }
+		if (!ok) {
+			document.getElementById('nameline').value = '';
+			document.getElementById('urlline').value = '';
+			document.getElementById('iconline').value = '';
+			return;
+		}
 		const name = document.getElementById('nameline');
 		const url = document.getElementById('urlline');
 		const icon = document.getElementById('iconline');

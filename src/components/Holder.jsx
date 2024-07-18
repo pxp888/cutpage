@@ -53,21 +53,19 @@ function Holder() {
 		const data = localStorage.getItem('shortcuts');
 		if (data) {
 			setShortcuts(JSON.parse(data));
-			console.log('Data loaded');
 		}
 
 		const styledata = localStorage.getItem('cutstyle');
 		if (styledata) {
 			setCutstyle(JSON.parse(styledata));
-			console.log('Style loaded');
 		}
 	}, []);
 
 	return (
 		<div className='mainarea'>
-			{/* <div onClick={toggleEdit}>{editmode ? 'normal' : 'edit mode'}</div> */}
-
-			<div className="frame" style={framestyle}>
+			<div className="frame" style={framestyle} 
+				onClick={() => { if (editmode) { setSelected(-1); } }} 
+				>
 				{shortcuts.map((cut, index) => (
 					<Shortcut 
 						key={index} 

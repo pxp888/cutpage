@@ -25,11 +25,13 @@ function Shortcut({index, cuts, setCuts, editmode, selected, setSelected, cutsty
 		<>
 			<div 
 				className={editmode ? 
-					(selected!=-1 ? 
+					(selected!==-1 ? 
 						(selected===index ? 'shortcut selected':'shortcut unselected') 
 						: 'shortcut')
-					 : 'shortcut'}				
-				onClick={() => { if (editmode) { setSelected(index); } }}
+					 : 'shortcut'}
+				onClick={(e) => { if (editmode) { 
+					e.stopPropagation();
+					setSelected(index); } }}
 				style={style}
 			>
 				{editmode ? 

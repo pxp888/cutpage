@@ -10,6 +10,8 @@
     flex-direction: column;
     justify-content: center;
     
+    padding: 20px;
+    box-sizing: border-box;
 
     background-color: gainsboro;
     transition: top 0.5s;
@@ -30,15 +32,14 @@
 
 
 .settingarea .twoform {
-    /* border: black 1px solid; */
     display: grid;
     grid-template-columns: 1fr 5fr;
     align-items: baseline;
-    padding: 10px;
+    /* padding: 10px; */
+    
 }
 
 .settingarea input {
-    width: 100%;
     padding: 5px;
     font-size: 1.2rem;
 }
