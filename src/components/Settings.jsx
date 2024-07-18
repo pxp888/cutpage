@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import '../styles/Settings.css';
 
@@ -78,9 +78,17 @@ function Settings({
 			setShortcuts(data);
 		};
 		reader.readAsText(file);
-
 	}
 
+	function clearCuts() {
+		localStorage.removeItem('shortcuts');
+		window.location.reload();
+	}
+
+	function clearStyles() {
+		localStorage.removeItem('cutstyle');
+		window.location.reload();
+	}
 
 	useEffect(() => {
 		document.getElementById('cutsizeslider').value = cutstyle.width;
@@ -151,14 +159,13 @@ function Settings({
 				onChange={updateCut}
 			/>
 
-
 			<button className="nbut" id="exportbutton" onClick={exportCuts} >Export</button>
 			
-			<input type="file" id="filepicker" onClick={importCuts} />
+			<input type="file" id="filepicker" onClick={importCuts} style={{display: 'none'}}  />
+			<button className="nbut" id="importbutton" onClick={() => document.getElementById('filepicker').click()} >Import</button>
 			
-			<button className="nbut" id="clearcutbutton">Reset Shortcuts</button>
-			<button className="nbut" id="clearstylebutton">Reset styles</button>
-
+			<button className="nbut" id="clearcutbutton" onClick={clearCuts} >Reset Shortcuts</button>
+			<button className="nbut" id="clearstylebutton" onClick={clearStyles} >Reset styles</button>
 		</div>
 
 	</div>

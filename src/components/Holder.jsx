@@ -88,15 +88,15 @@ function Holder() {
 					/>
 				))}
 
-				<div className="setbutton" style={cutstyle}>
-					<img src={setpic} alt="settings" onClick={toggleEdit} />
-				</div>
-				
 				{editmode &&
 					<div className="plusbutton" onClick={addShortcut} style={cutstyle}>
 						<img src={plus} alt="add shortcut" />
 					</div>
 				}
+
+				<div className="setbutton" style={cutstyle}>
+					<img src={setpic} alt="settings" onClick={toggleEdit} />
+				</div>
 
 			</div>
 
@@ -107,7 +107,6 @@ function Holder() {
 				setShortcuts={setShortcuts}
 				cutstyle={cutstyle}
 				setCutstyle={setCutstyle}
-				
 			/>
 		</div>
 	);
