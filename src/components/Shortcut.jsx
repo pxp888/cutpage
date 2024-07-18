@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import Imgdrop from './Imgdrop';
+
 import blankimage from '../assets/blankimage.png'
 import ximage from '../assets/x.webp'
 
@@ -20,6 +22,18 @@ function Shortcut({index, cuts, setCuts, editmode, selected, setSelected, cutsty
 		setSelected(-1);
 	}
 
+	function imageDropped(im) {
+		const newcuts = [...cuts];
+		newcuts[index][2] = im;
+		setCuts(newcuts);
+	}
+
+	function moveIcons(src){
+		const newcuts = [...cuts];
+		const [movedItem] = newcuts.splice(src, 1);
+		newcuts.splice(index, 0, movedItem);
+		setCuts(newcuts);
+	}
 
 	return (
 		<>
@@ -54,6 +68,11 @@ function Shortcut({index, cuts, setCuts, editmode, selected, setSelected, cutsty
 						></img>
 					</div>
 				}
+
+				{editmode && <Imgdrop 
+					index={index}
+					imageDropped={imageDropped} 
+					moveIcons={moveIcons} /> }
 			</div>
 		</>
 	);
