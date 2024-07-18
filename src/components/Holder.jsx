@@ -72,10 +72,9 @@ function Holder() {
 	}, []);
 
 	return (
-		<div className='mainarea' style={backstyle}>
-			<div className="frame" style={framestyle} 
-				onClick={() => { if (editmode) { setSelected(-1); } }} 
-				>
+		<div className='mainarea' style={backstyle} 
+			onClick={() => { if (editmode) { setSelected(-1); } }}>
+			<div className="frame" style={framestyle} >
 				{shortcuts.map((cut, index) => (
 					<Shortcut 
 						key={index} 
@@ -89,15 +88,16 @@ function Holder() {
 					/>
 				))}
 
+				<div className="setbutton" style={cutstyle}>
+					<img src={setpic} alt="settings" onClick={toggleEdit} />
+				</div>
+				
 				{editmode &&
 					<div className="plusbutton" onClick={addShortcut} style={cutstyle}>
 						<img src={plus} alt="add shortcut" />
 					</div>
 				}
 
-				<div className="setbutton" style={cutstyle}>
-					<img src={setpic} alt="settings" onClick={toggleEdit} />
-				</div>
 			</div>
 
 			<Settings 
