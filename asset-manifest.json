@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/cutpage/static/css/main.a6959abd.css",
+    "main.js": "/cutpage/static/js/main.2ace7525.js",
+    "static/js/453.2227f405.chunk.js": "/cutpage/static/js/453.2227f405.chunk.js",
+    "static/media/settings.png": "/cutpage/static/media/settings.791deac22e2df149ef14.png",
+    "static/media/x.webp": "/cutpage/static/media/x.1ab93d2cb707268a44ac.webp",
+    "index.html": "/cutpage/index.html",
+    "main.a6959abd.css.map": "/cutpage/static/css/main.a6959abd.css.map",
+    "main.2ace7525.js.map": "/cutpage/static/js/main.2ace7525.js.map",
+    "453.2227f405.chunk.js.map": "/cutpage/static/js/453.2227f405.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a6959abd.css",
+    "static/js/main.2ace7525.js"
+  ]
+}
