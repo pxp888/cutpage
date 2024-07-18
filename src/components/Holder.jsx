@@ -19,10 +19,12 @@ function Holder() {
 		height: 200, 
 		margin: 0,
 		framewidth: 800,
+		framepad: 100,
 	});
 	
 	const framestyle = {
-		maxWidth: cutstyle.framewidth,
+		maxWidth: `${cutstyle.framewidth}px`,
+        padding: `${cutstyle.framepad}px`,
 	};
 
 	function toggleEdit() {

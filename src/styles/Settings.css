@@ -34,13 +34,20 @@
 .settingarea .twoform {
     display: grid;
     grid-template-columns: 1fr 5fr;
-    align-items: baseline;
-    /* padding: 10px; */
-    
+    align-items: center;
+
+    margin: 10px 0;
 }
 
 .settingarea input {
+    box-sizing: border-box;
+    height: 32px;
     padding: 5px;
     font-size: 1.2rem;
+}
+
+.settingarea input[type="text" i] {
+    border-radius: 5px;
+    border: gray 1px solid;
 }
 

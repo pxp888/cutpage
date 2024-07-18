@@ -38,6 +38,7 @@ function Settings({editmode, selected, shortcuts, setShortcuts, cutstyle, setCut
 		temp.height = parseInt(document.getElementById('cutsizeslider').value);
 		temp.margin = parseInt(document.getElementById('iconmarginslider').value);
 		temp.framewidth = parseInt(document.getElementById('framewidthslider').value);
+		temp.framepad = parseInt(document.getElementById('framepadslider').value);
 		setCutstyle(temp);
 	}
 
@@ -45,6 +46,7 @@ function Settings({editmode, selected, shortcuts, setShortcuts, cutstyle, setCut
 		document.getElementById('cutsizeslider').value = cutstyle.width;
 		document.getElementById('iconmarginslider').value = cutstyle.margin;
 		document.getElementById('framewidthslider').value = cutstyle.framewidth;
+		document.getElementById('framepadslider').value = cutstyle.framepad;
 		
 	}, []);
 
@@ -85,7 +87,13 @@ function Settings({editmode, selected, shortcuts, setShortcuts, cutstyle, setCut
 				onChange={updateCut}
 			/>
 
-
+			<label htmlFor="framepadslider">frame padding: </label>
+			<input type="range"
+				id="framepadslider"
+				min="0"
+				max="600"
+				onChange={updateCut}
+			/>
 		</div>
 	</div>
 

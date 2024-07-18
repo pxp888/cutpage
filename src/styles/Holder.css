@@ -11,13 +11,11 @@
 .frame {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     align-content: flex-start;
     
     background-color: black;
-    padding: 100px;
-    margin: 100px 0;
 }
 
 
