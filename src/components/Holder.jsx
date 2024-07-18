@@ -95,6 +95,7 @@ function Holder() {
 				}
 
 				<div className="setbutton" style={cutstyle}>
+					<p>settings</p>
 					<img src={setpic} alt="settings" onClick={toggleEdit} />
 				</div>
 

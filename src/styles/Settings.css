@@ -1,47 +1,51 @@
 .settingarea {
     z-index: 10;
     width: 100vw;
-    height: 25vh;
+    height: 240px;
     position: fixed;
-    top: 75vh;
+    bottom: 0;
     left: 0;
-
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
+    transition: bottom 0.5s;
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 
-    
-    padding: 20px;
+    padding: 0px;
     box-sizing: border-box;
 
     background-color: gainsboro;
-    transition: top 0.5s;
-
     overflow: auto;
 }
 
-@media screen and (max-width: 800px) {
-    .settingarea {
-        height: 40vh;
-        top: 60vh;
-    }
-}
 
 .settingarea.down {
-    top: 110lvh;
+    bottom: -270px;
 }
 
+
 .setspace {
-    height: 40vh;
+    height: 240px;
     transition: height 0.5s;
 }
 
 .setspace.down {
     height: 0;
 }
+
+@media screen and (max-width: 800px) {
+    .settingarea {
+        height: 40vh;
+    }
+
+    .settingarea.down {
+        bottom: -100vh;
+    }
+
+    .setspace {
+        height: 40vh;
+    }
+}
+
 
 
 .settingarea .twoform {
@@ -50,7 +54,7 @@
     grid-template-rows: repeat(4, 1fr);
     align-items: center;
 
-    /* margin: 10px 0; */
+    margin: 10px;
 }
 
 .settingarea .fourform {
@@ -59,7 +63,7 @@
     grid-template-rows: repeat(4, 1fr);
     align-items: center;
 
-    /* margin: 10px 0; */
+    margin: 10px;
 }
 
 .settingarea input {

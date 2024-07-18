@@ -25,8 +25,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
 
+.setbutton p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    align-content: center;
+    
+    margin: 0;
+    padding: 0;
+    
+    z-index: 2;
+    text-decoration: none;
+    font-size: 1.4rem;
+    
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
 
+    pointer-events: none;
+
+}
+
+.setbutton:hover p {
+    opacity: 1;
 }
 
 .plusbutton img, .setbutton img {
