@@ -8,7 +8,7 @@ import ximage from '../assets/x.webp'
 
 import '../styles/Shortcut.css';
 
-function Shortcut({index, cuts, setCuts, editmode, selected, setSelected, cutstyle}) {
+function Shortcut({index, cuts, setCuts, editmode, selected, setSelected, cutstyle, }) {
 	const style = {
 		width: cutstyle.width,
 		height: cutstyle.height,
@@ -34,6 +34,8 @@ function Shortcut({index, cuts, setCuts, editmode, selected, setSelected, cutsty
 		newcuts.splice(index, 0, movedItem);
 		setCuts(newcuts);
 	}
+
+	
 
 	return (
 		<>

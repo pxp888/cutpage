@@ -1,9 +1,9 @@
 .settingarea {
     z-index: 10;
     width: 100vw;
-    height: 30vh;
+    height: 25vh;
     position: fixed;
-    top: 70vh;
+    top: 75vh;
     left: 0;
 
     /* display: flex;
@@ -43,7 +43,7 @@
     grid-template-rows: repeat(4, 1fr);
     align-items: center;
 
-    margin: 10px 0;
+    /* margin: 10px 0; */
 }
 
 .settingarea .fourform {
@@ -52,7 +52,7 @@
     grid-template-rows: repeat(4, 1fr);
     align-items: center;
 
-    margin: 10px 0;
+    /* margin: 10px 0; */
 }
 
 .settingarea input {
@@ -65,5 +65,20 @@
 .settingarea input[type="text" i] {
     border-radius: 5px;
     border: gray 1px solid;
+}
+
+.settingarea .nbut {
+    grid-column: span 2;
+    border-style: none;
+    border: gray 1px solid;
+    border-radius: 10px;
+    margin: 2px;
+
+    height: 32px;
+    transition: background-color 0.25s;
+}
+
+.settingarea .nbut:hover {
+    background-color: lightgray;
 }
 

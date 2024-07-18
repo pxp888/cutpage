@@ -2,7 +2,15 @@ import { useState, useEffect } from 'react';
 
 import '../styles/Settings.css';
 
-function Settings({editmode, selected, shortcuts, setShortcuts, cutstyle, setCutstyle}) {
+function Settings({
+	editmode, 
+	selected, 
+	shortcuts, 
+	setShortcuts, 
+	cutstyle, 
+	setCutstyle,
+	
+	}) {
 	useEffect(() => {
 		let ok=true;
 		if (selected === -1) { ok = false; }
@@ -43,6 +51,36 @@ function Settings({editmode, selected, shortcuts, setShortcuts, cutstyle, setCut
 		temp.backcolor = document.getElementById('backcolorpicker').value;
 		setCutstyle(temp);
 	}
+
+	function exportCuts() {
+		const data = JSON.stringify(shortcuts);
+		const blob = new Blob([data], {type: 'application/json'});
+		const url = URL.createObjectURL(blob);
+		const a = document.createElement('a');
+		a.href = url;
+		a.download = 'shortcuts.json';
+		a.click();
+	}
+
+	function importCuts(e) {
+		if (!e.target.files || e.target.files.length === 0) {
+			console.log('no files selected');
+			return;
+		}
+		const file = e.target.files[0];
+		if (!(file instanceof Blob)) {
+			console.error('Selected file is not a Blob');
+			return;
+		}
+		const reader = new FileReader();
+		reader.onload = (e) => {
+			const data = JSON.parse(e.target.result);
+			setShortcuts(data);
+		};
+		reader.readAsText(file);
+
+	}
+
 
 	useEffect(() => {
 		document.getElementById('cutsizeslider').value = cutstyle.width;
@@ -99,7 +137,7 @@ function Settings({editmode, selected, shortcuts, setShortcuts, cutstyle, setCut
 			/>
 		</div>
 
-		<div className='twoform'>
+		<div className='fourform'>
 			<label htmlFor="framecolorpicker">frame color: </label>
 			<input type="color"
 				id="framecolorpicker"
@@ -111,6 +149,14 @@ function Settings({editmode, selected, shortcuts, setShortcuts, cutstyle, setCut
 				id="backcolorpicker"
 				onChange={updateCut}
 			/>
+
+
+			<button className="nbut" id="exportbutton" onClick={exportCuts} >Export</button>
+			
+			<input type="file" id="filepicker" onClick={importCuts} />
+			
+			<button className="nbut" id="clearcutbutton">Reset Shortcuts</button>
+			<button className="nbut" id="clearstylebutton">Reset styles</button>
 
 		</div>
 

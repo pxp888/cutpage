@@ -107,6 +107,7 @@ function Holder() {
 				setShortcuts={setShortcuts}
 				cutstyle={cutstyle}
 				setCutstyle={setCutstyle}
+				
 			/>
 		</div>
 	);
