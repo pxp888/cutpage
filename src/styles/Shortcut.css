@@ -57,6 +57,12 @@
     opacity: 1;
 }
 
+@media screen and (max-width: 768px) {
+    .shortcut p, .shortcut a {
+        font-size: 1.2rem;
+    }
+}
+
 .xbutton {
     z-index: 3;
     position: absolute;
