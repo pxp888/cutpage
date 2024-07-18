@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/cutpage/static/css/main.0a26518c.css",
-    "main.js": "/cutpage/static/js/main.31985d48.js",
+    "main.css": "/cutpage/static/css/main.397246ac.css",
+    "main.js": "/cutpage/static/js/main.1eb0a7a7.js",
     "static/js/453.2227f405.chunk.js": "/cutpage/static/js/453.2227f405.chunk.js",
     "static/media/settings.png": "/cutpage/static/media/settings.791deac22e2df149ef14.png",
     "static/media/x.webp": "/cutpage/static/media/x.1ab93d2cb707268a44ac.webp",
     "index.html": "/cutpage/index.html",
-    "main.0a26518c.css.map": "/cutpage/static/css/main.0a26518c.css.map",
-    "main.31985d48.js.map": "/cutpage/static/js/main.31985d48.js.map",
+    "main.397246ac.css.map": "/cutpage/static/css/main.397246ac.css.map",
+    "main.1eb0a7a7.js.map": "/cutpage/static/js/main.1eb0a7a7.js.map",
     "453.2227f405.chunk.js.map": "/cutpage/static/js/453.2227f405.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a26518c.css",
-    "static/js/main.31985d48.js"
+    "static/css/main.397246ac.css",
+    "static/js/main.1eb0a7a7.js"
   ]
 }
