@@ -6,15 +6,21 @@
     top: 70vh;
     left: 0;
 
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+
     
     padding: 20px;
     box-sizing: border-box;
 
     background-color: gainsboro;
     transition: top 0.5s;
+
+    overflow: auto;
 }
 
 .settingarea.down {
@@ -33,7 +39,17 @@
 
 .settingarea .twoform {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 120px 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
+
+    margin: 10px 0;
+}
+
+.settingarea .fourform {
+    display: grid;
+    grid-template-columns: 120px 1fr 120px 1fr;
+    grid-template-rows: repeat(4, 1fr);
     align-items: center;
 
     margin: 10px 0;

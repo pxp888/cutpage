@@ -20,20 +20,28 @@ function Holder() {
 		margin: 0,
 		framewidth: 800,
 		framepad: 100,
+		framecolor: '#000000',
+		backcolor: '#323232',
 	});
 	
 	const framestyle = {
 		maxWidth: `${cutstyle.framewidth}px`,
         padding: `${cutstyle.framepad}px`,
+		backgroundColor: cutstyle.framecolor,
 	};
 
+	const backstyle = {
+		backgroundColor: cutstyle.backcolor,
+	};
+	
 	function toggleEdit() {
 		if (editmode) { setSelected(-1); }
 		setEditmode(!editmode);
 	}
 
-	function addShortcut() {
-		const newcut = ['New Shortcut', 'https://www.google.com', ''];
+	function addShortcut(e) {
+		e.stopPropagation();
+		const newcut = ['New Shortcut', '', ''];
 		setShortcuts([...shortcuts, newcut]);
 		setSelected(shortcuts.length);
 	}
@@ -64,7 +72,7 @@ function Holder() {
 	}, []);
 
 	return (
-		<div className='mainarea'>
+		<div className='mainarea' style={backstyle}>
 			<div className="frame" style={framestyle} 
 				onClick={() => { if (editmode) { setSelected(-1); } }} 
 				>

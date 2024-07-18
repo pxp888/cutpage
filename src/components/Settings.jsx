@@ -39,6 +39,8 @@ function Settings({editmode, selected, shortcuts, setShortcuts, cutstyle, setCut
 		temp.margin = parseInt(document.getElementById('iconmarginslider').value);
 		temp.framewidth = parseInt(document.getElementById('framewidthslider').value);
 		temp.framepad = parseInt(document.getElementById('framepadslider').value);
+		temp.framecolor = document.getElementById('framecolorpicker').value;
+		temp.backcolor = document.getElementById('backcolorpicker').value;
 		setCutstyle(temp);
 	}
 
@@ -47,7 +49,8 @@ function Settings({editmode, selected, shortcuts, setShortcuts, cutstyle, setCut
 		document.getElementById('iconmarginslider').value = cutstyle.margin;
 		document.getElementById('framewidthslider').value = cutstyle.framewidth;
 		document.getElementById('framepadslider').value = cutstyle.framepad;
-		
+		document.getElementById('framecolorpicker').value = cutstyle.framecolor;
+		document.getElementById('backcolorpicker').value = cutstyle.backcolor;
 	}, []);
 
   	return (
@@ -95,6 +98,22 @@ function Settings({editmode, selected, shortcuts, setShortcuts, cutstyle, setCut
 				onChange={updateCut}
 			/>
 		</div>
+
+		<div className='twoform'>
+			<label htmlFor="framecolorpicker">frame color: </label>
+			<input type="color"
+				id="framecolorpicker"
+				onChange={updateCut}
+			/>
+
+			<label htmlFor="backcolorpicker">background: </label>
+			<input type="color"
+				id="backcolorpicker"
+				onChange={updateCut}
+			/>
+
+		</div>
+
 	</div>
 
 	<div className={editmode ? 'setspace' : 'setspace down'}></div>
