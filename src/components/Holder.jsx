@@ -99,6 +99,7 @@ function Holder() {
 
 			<Settings 
 				editmode={editmode}
+				setEditmode={setEditmode}
 				selected={selected}
 				shortcuts={shortcuts}
 				setShortcuts={setShortcuts}

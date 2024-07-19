@@ -34,7 +34,7 @@ function Backim({editmode, backim, setBackim}) {
 
     const handleDrop = (e) => {
         e.preventDefault();
-		if (!editmode) { return; }
+		// if (!editmode) { return; }
 
         setIsDragging(false);
         const imageUrl = e.dataTransfer.getData("text/html");

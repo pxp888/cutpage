@@ -4,6 +4,7 @@ import '../styles/Settings.css';
 
 function Settings({
 	editmode, 
+	setEditmode,
 	selected, 
 	shortcuts, 
 	setShortcuts, 
@@ -187,7 +188,8 @@ function Settings({
 			<button className="nbut" id="clearcutbutton" onClick={clearCuts} >Reset Shortcuts</button>
 			<button className="nbut" id="clearstylebutton" onClick={clearStyles} >Reset styles</button>
 
-			{backim !== '' && <button className="nbut" id="clearbackbutton" onClick={() => setBackim('')} >Clear Background</button>}
+			<button className="nbut" id="clearbackbutton" onClick={() => setBackim('')} disabled={backim === ''} >Clear Background</button>
+			<button className="nbut" onClick={()=>{setEditmode(false)}} >close settings</button>
 		</div>
 
 	</div>
