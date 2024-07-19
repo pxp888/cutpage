@@ -15,6 +15,10 @@ function Shortcut({index, cuts, setCuts, editmode, selected, setSelected, cutsty
 		margin: cutstyle.margin,
 	}
 
+	const fstyle = {
+		fontSize: cutstyle.fontsize + 'rem',
+	}
+
 	function deleteShortcut() {
 		const newcuts = [...cuts];
 		newcuts.splice(index, 1);
@@ -51,9 +55,9 @@ function Shortcut({index, cuts, setCuts, editmode, selected, setSelected, cutsty
 				style={style}
 			>
 				{editmode ? 
-					<p>{cuts[index][0]}</p>
+					<p style={fstyle} >{cuts[index][0]}</p>
 					:
-					<a href={cuts[index][1]} target="_blank" rel="noreferrer">{cuts[index][0]}</a>
+					<a href={cuts[index][1]} target="_blank" rel="noreferrer" style={fstyle} >{cuts[index][0]}</a>
 				}
 
 				{cuts[index][2] === "" ? 

@@ -55,6 +55,7 @@ function Settings({
 		temp.framepad = parseInt(document.getElementById('framepadslider').value);
 		temp.framecolor = document.getElementById('framecolorpicker').value;
 		temp.backcolor = document.getElementById('backcolorpicker').value;
+		temp.fontsize = parseFloat(document.getElementById('fontslider').value);
 		setCutstyle(temp);
 	}
 
@@ -109,6 +110,7 @@ function Settings({
 			document.getElementById('framepadslider').value = data.framepad;
 			document.getElementById('framecolorpicker').value = data.framecolor;
 			document.getElementById('backcolorpicker').value = data.backcolor;
+			document.getElementById('fontslider').value = data.fontSize;
 		}
 	}, []);
 
@@ -131,6 +133,15 @@ function Settings({
 			<input type="text" id='urlline' onChange={updateShorts}/>
 			<label htmlFor="iconline">icon url: </label>
 			<input type="text" id='iconline' onChange={updateShorts}/>
+
+			<label htmlFor="fontslider">font size: </label>
+			<input type="range"
+				id="fontslider"
+				min="1"
+				max="4"
+				step="0.1"
+				onChange={updateCut}
+			/>
 		</div>
 
 		<div className="twoform">
@@ -165,6 +176,8 @@ function Settings({
 				max="600"
 				onChange={updateCut}
 			/>
+
+			
 		</div>
 
 		<div className='fourform'>

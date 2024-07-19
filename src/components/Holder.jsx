@@ -25,6 +25,7 @@ function Holder() {
 		framepad: 100,
 		framecolor: '#000000',
 		backcolor: '#323232',
+		fontsize: 1.4,
 	});
 	
 	const framestyle = {
