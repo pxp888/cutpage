@@ -12,5 +12,9 @@ A settings panel shows all relevant controls.
 
 ![cover image](./public/4.webp)
 
+Drag and drop background image setting  
+![cover image](./public/5.webp)
+
+
 ## No information is stored on a server. 
 Data is stored only in local storage, but may be exported to a file for sharing with other computers.  
