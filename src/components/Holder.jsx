@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Shortcut from './Shortcut';
 import startcuts from './defaults';
 import Settings from './Settings';
+import Backim from './Backim';
 
 import '../styles/Holder.css';
 
@@ -14,6 +15,7 @@ function Holder() {
 	const [shortcuts, setShortcuts] = useState(startcuts);
 	const [editmode, setEditmode] = useState(false);
 	const [selected, setSelected] = useState(-1);
+	const [backim, setBackim] = useState('');
 	const [cutstyle, setCutstyle] = useState({
 		width: 200, 
 		height: 200, 
@@ -74,6 +76,9 @@ function Holder() {
 	return (
 		<div className='mainarea' style={backstyle} 
 			onClick={() => { if (editmode) { setSelected(-1); } }}>
+			
+			<Backim editmode={editmode} backim={backim} setBackim={setBackim} /> 
+			
 			<div className="frame" style={framestyle} >
 				{shortcuts.map((cut, index) => (
 					<Shortcut 
@@ -108,6 +113,8 @@ function Holder() {
 				setShortcuts={setShortcuts}
 				cutstyle={cutstyle}
 				setCutstyle={setCutstyle}
+				backim={backim}
+				setBackim={setBackim}
 			/>
 		</div>
 	);

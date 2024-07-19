@@ -9,6 +9,8 @@ function Settings({
 	setShortcuts, 
 	cutstyle, 
 	setCutstyle,
+	backim,
+	setBackim,
 	
 	}) {
 	useEffect(() => {
@@ -168,6 +170,8 @@ function Settings({
 			
 			<button className="nbut" id="clearcutbutton" onClick={clearCuts} >Reset Shortcuts</button>
 			<button className="nbut" id="clearstylebutton" onClick={clearStyles} >Reset styles</button>
+
+			{backim !== '' && <button className="nbut" id="clearbackbutton" onClick={() => setBackim('')} >Clear Background</button>}
 		</div>
 
 	</div>
