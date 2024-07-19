@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import '../styles/Settings.css';
 
@@ -13,6 +13,9 @@ function Settings({
 	setBackim,
 	
 	}) {
+
+	const [startup, setStartup] = useState(true);
+
 	useEffect(() => {
 		let ok=true;
 		if (selected === -1) { ok = false; }
@@ -95,13 +98,26 @@ function Settings({
 	}
 
 	useEffect(() => {
-		document.getElementById('cutsizeslider').value = cutstyle.width;
-		document.getElementById('iconmarginslider').value = cutstyle.margin;
-		document.getElementById('framewidthslider').value = cutstyle.framewidth;
-		document.getElementById('framepadslider').value = cutstyle.framepad;
-		document.getElementById('framecolorpicker').value = cutstyle.framecolor;
-		document.getElementById('backcolorpicker').value = cutstyle.backcolor;
+		let data = localStorage.getItem('cutstyle');
+		if (data) {
+			data = JSON.parse(data);
+			setCutstyle(data);
+			document.getElementById('cutsizeslider').value = data.width;
+			document.getElementById('iconmarginslider').value = data.margin;
+			document.getElementById('framewidthslider').value = data.framewidth;
+			document.getElementById('framepadslider').value = data.framepad;
+			document.getElementById('framecolorpicker').value = data.framecolor;
+			document.getElementById('backcolorpicker').value = data.backcolor;
+		}
 	}, []);
+
+	useEffect(() => {
+		if (startup) { 
+			setStartup(false);
+			return; }
+		localStorage.setItem('cutstyle', JSON.stringify(cutstyle));
+	}, [cutstyle]);
+
 
   	return (
 	<>

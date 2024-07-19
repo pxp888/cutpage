@@ -16,6 +16,7 @@ function Holder() {
 	const [editmode, setEditmode] = useState(false);
 	const [selected, setSelected] = useState(-1);
 	const [backim, setBackim] = useState('');
+
 	const [cutstyle, setCutstyle] = useState({
 		width: 200, 
 		height: 200, 
@@ -57,19 +58,9 @@ function Holder() {
 	}, [shortcuts]);
 
 	useEffect(() => {
-		if (startup) { return; }
-		localStorage.setItem('cutstyle', JSON.stringify(cutstyle));
-	}, [cutstyle]);
-
-	useEffect(() => {
 		const data = localStorage.getItem('shortcuts');
 		if (data) {
 			setShortcuts(JSON.parse(data));
-		}
-
-		const styledata = localStorage.getItem('cutstyle');
-		if (styledata) {
-			setCutstyle(JSON.parse(styledata));
 		}
 	}, []);
 
