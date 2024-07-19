@@ -110,7 +110,7 @@ function Settings({
 			document.getElementById('framepadslider').value = data.framepad;
 			document.getElementById('framecolorpicker').value = data.framecolor;
 			document.getElementById('backcolorpicker').value = data.backcolor;
-			document.getElementById('fontslider').value = data.fontSize;
+			document.getElementById('fontslider').value = data.fontsize;
 		}
 	}, []);
 
