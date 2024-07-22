@@ -34,7 +34,7 @@ function Settings({
 		name.value = shortcuts[selected][0];
 		url.value = shortcuts[selected][1];
 		icon.value = shortcuts[selected][2];
-	}, [selected]);
+	}, [selected, shortcuts]);
 
 	function updateShorts() {
 		const name = document.getElementById('nameline').value;
