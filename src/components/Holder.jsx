@@ -34,6 +34,10 @@ function Holder() {
 		backgroundColor: cutstyle.framecolor,
 	};
 
+	const fstyle = {
+		fontSize: cutstyle.fontsize + 'rem',
+	}
+
 	const backstyle = {
 		backgroundColor: cutstyle.backcolor,
 	};
@@ -92,7 +96,7 @@ function Holder() {
 				}
 
 				<div className="setbutton" style={cutstyle}>
-					<p>settings</p>
+					<p style={fstyle} >settings</p>
 					<img src={setpic} alt="settings" onClick={toggleEdit} />
 				</div>
 
