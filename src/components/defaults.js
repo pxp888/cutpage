@@ -47,7 +47,7 @@ let startcuts = [
     [
         "Gemini",
         "https://bard.google.com/chat",
-        "https://seeklogo.com/images/G/google-gemini-logo-A5787B2669-seeklogo.com.png",
+        "https://mir-s3-cdn-cf.behance.net/projects/404/994157188450701.Y3JvcCwxNjE2LDEyNjQsMCww.png",
     ],
     [
         "ChatGPT",
